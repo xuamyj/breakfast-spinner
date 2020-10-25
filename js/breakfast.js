@@ -5,7 +5,7 @@
 const menu = [
 	{
 		name: 'Fruit',
-		percent: 30,
+		percent: 15,
 	},
 	{
 		name: 'Toast + eggs, and fruit',
@@ -13,7 +13,7 @@ const menu = [
 	},
 	{
 		name: 'Just eggs (fried), and fruit',
-		percent: 10,
+		percent: 15,
 	},
 	{
 		name: 'Toast + peanut butter, and fruit',
@@ -29,9 +29,34 @@ const menu = [
 	},
 	{
 		name: 'Cereal + milk, and fruit',
-		percent: 20,
+		percent: 30,
 	},
 ]
+
+
+// -------------------------------
+// FUNCTIONS: MENU-RELATED HELPERS
+// -------------------------------
+
+function chooseFoodFromMenu(num) {
+	// todo(wonjeo): scope creep as you please
+	let sum = 0;
+	let item = "";
+	for (let i = 0; i < menu.length; ++i) {
+		sum += menu[i].percent;
+		if (sum > num) {
+			item = menu[i].name;
+			break;
+		}
+	}
+
+	// fruit removal
+	if (num % 2 === 0) {
+		item = item.replace(", and fruit", "");
+	}
+
+	return item;
+}
 
 
 // ------------------
@@ -68,16 +93,6 @@ function updateAnswer(elementId, answer) {
 }
 
 
-// -------------------------------
-// FUNCTIONS: MENU-RELATED HELPERS
-// -------------------------------
-
-function chooseFoodFromMenu() {
-	// todo(wonjeo): scope creep as you please
-	return 'Try again later';
-}
-
-
 // -------------------------
 // FUNCTIONS: CLICK HANDLERS
 // -------------------------
@@ -102,6 +117,8 @@ function onClickFindOut() {
 
     // later, show food and button
     setTimeout(() => {
+	    displaySection(SECTION_THINKING, false);
+	    
         displaySection(SECTION_FOOD, true);
         displaySection(BUTTON_VIEW_NUMBER, true);
     }, 900);
