@@ -1,0 +1,62 @@
+/* for hiding inactive sections */
+.inactive {
+  display: none !important;
+}
+
+body {
+    margin:25px;
+
+    background-color: #D8D2E1;
+}
+
+h2 { /* top text */
+    margin: 0px;
+
+    font-family: 'Homemade Apple', cursive;
+    color: #4E4966; /* plum */
+}
+
+h3 { /* card name */
+    margin: 0px;
+
+    font-family: 'Roboto Slab', serif;
+    color: #4E4966; /* plum */
+}
+
+p {
+    margin: 5px 0px;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #543c54; /* dark pink */
+}
+
+.button {
+    margin: 8px 0px;
+
+    display: inline-block;
+    background-color: #BCA0BC; /* pink */
+    padding: 10px 30px;
+    border-radius: 4px;
+
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: bold;
+    font-size: large;
+    letter-spacing: 2px;
+    color: #4E4966; /* plum */
+}
+
+.button:hover, .button:active {
+    cursor: pointer;
+
+    background-color: #4E4966; /* plum */
+
+    color: #BCA0BC; /* pink */
+}
+
+.result {
+    margin: 20px 0px;
+
+    padding: 15px;
+
+    border: 2px dashed #4E4966; /* plum */
+}
